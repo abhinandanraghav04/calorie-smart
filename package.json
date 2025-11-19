@@ -1,0 +1,42 @@
+{
+  "name": "calorie-smart-mvp",
+  "version": "1.0.0",
+  "description": "Calorie tracking MVP application",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "vitest",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:migrate": "prisma migrate dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://abhinandanraghav04:ghs_7iywhVV0L9SNL3WySVFEbixLT3FPEp31Wwnb@github.com/abhinandanraghav04/calorie-smart-mvp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abhinandanraghav04/calorie-smart-mvp/issues"
+  },
+  "homepage": "https://github.com/abhinandanraghav04/calorie-smart-mvp#readme",
+  "dependencies": {
+    "@prisma/client": "^6.19.0",
+    "dotenv": "^17.2.3",
+    "next": "^14.2.33",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.6",
+    "@types/react-dom": "^19.2.3",
+    "prisma": "^6.19.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.10"
+  }
+}
