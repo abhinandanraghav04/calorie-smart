@@ -64,14 +64,16 @@ export const authOptions: AuthOptions = {
     },
     async session({ session, token }) {
       if (token && session.user) {
-        const id = typeof token.id === "string" ? token.id : session.user.id
-        const email = typeof token.email === "string" ? token.email : session.user.email
-
-        session.user = {
-          ...session.user,
-          id: id ?? "",
-          email: email ?? "",
+        // Type assertion to bypass TypeScript issue with module augmentation
+        const userWithId = session.user as {
+          id: string
+          email: string
+          name?: string | null
+          image?: string | null
         }
+        
+        userWithId.id = token.id ?? ""
+        userWithId.email = token.email ?? ""
       }
 
       return session
