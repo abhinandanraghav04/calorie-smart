@@ -1,0 +1,2 @@
+# This lockfile ensures that the migration provider is consistent across environments.
+provider = "postgresql"
