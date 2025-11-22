@@ -68,7 +68,7 @@ export default async function DashboardPage() {
 
         <div className="mt-8 rounded-lg bg-white p-6 shadow">
           <div className="flex items-center justify-between">
-            <h2 className="text-xl font-bold text-gray-900">Today's Food Log</h2>
+            <h2 className="text-xl font-bold text-gray-900">Today&apos;s Food Log</h2>
             <a
               href="/dashboard/food/add"
               className="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
