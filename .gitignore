@@ -44,6 +44,3 @@ pnpm-debug.log*
 *.swp
 *.swo
 *~
-
-# Prisma
-prisma/migrations/*/migration.sql
