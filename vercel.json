@@ -1,0 +1,30 @@
+{
+  "buildCommand": "pnpm build",
+  "installCommand": "pnpm install",
+  "framework": "nextjs",
+  "functions": {
+    "app/api/**/*.ts": {
+      "maxDuration": 30
+    }
+  },
+  "build": {
+    "env": {
+      "PRISMA_GENERATE_DATAPROXY": "true"
+    }
+  },
+  "postbuildCommand": "pnpm prisma:migrate:deploy",
+  "env": {
+    "NEXTAUTH_URL": {
+      "description": "The canonical URL of your production deployment"
+    },
+    "DATABASE_URL": {
+      "description": "PostgreSQL connection string (Supabase recommended)"
+    },
+    "NEXTAUTH_SECRET": {
+      "description": "Secret key for NextAuth JWT signing"
+    },
+    "FDC_API_KEY": {
+      "description": "USDA Food Data Central API key"
+    }
+  }
+}
