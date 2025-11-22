@@ -25,14 +25,7 @@ Create a `.env` file in the project root based on `.env.example`:
 cp .env.example .env
 ```
 
-<<<<<<< HEAD
 Update the values to match your environment, especially `DATABASE_URL` and `NEXTAUTH_SECRET`.
-
-### Install Dependencies
-
-```bash
-pnpm install
-```
 
 ### Install & Run
 
