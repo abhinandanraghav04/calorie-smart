@@ -70,13 +70,26 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 ## Available Scripts
 
 - `pnpm dev` – Start the development server
-- `pnpm build` – Create a production build
+- `pnpm build` – Create a production build (includes migrations)
 - `pnpm start` – Start the production server
 - `pnpm lint` – Run ESLint
 - `pnpm typecheck` – Run TypeScript type checking
 - `pnpm prisma:generate` – Generate Prisma client
 - `pnpm prisma:migrate` – Run Prisma migrations (development)
+- `pnpm prisma:migrate:deploy` – Deploy migrations (production)
 - `pnpm prisma:seed` – Seed demo data
+
+## Deployment
+
+Ready to deploy? Choose your guide:
+
+- **Quick Start**: [DEPLOYMENT_QUICKSTART.md](./DEPLOYMENT_QUICKSTART.md) - 10 minute setup guide
+- **Comprehensive**: [DEPLOYMENT.md](./DEPLOYMENT.md) - Full deployment documentation
+
+Quick summary:
+1. Set up a Supabase PostgreSQL database
+2. Configure environment variables in Vercel
+3. Deploy - migrations run automatically on each deployment
 
 ## Additional Notes
 
