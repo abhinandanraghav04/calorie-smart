@@ -7,12 +7,72 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum Sex {
+  MALE
+  FEMALE
+}
+
+enum ActivityLevel {
+  SEDENTARY
+  LIGHTLY_ACTIVE
+  MODERATELY_ACTIVE
+  VERY_ACTIVE
+  EXTRA_ACTIVE
+}
+
+enum Goal {
+  LOSE
+  MAINTAIN
+  GAIN
+}
+
+enum MealType {
+  BREAKFAST
+  LUNCH
+  DINNER
+  SNACK
+}
+
 model User {
-  id           String   @id @default(cuid())
-  email        String   @unique
+  id           String      @id @default(cuid())
+  email        String      @unique
   passwordHash String
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+  name         String?
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  profile      Profile?
+  foodEntries  FoodEntry[]
 
   @@map("users")
+}
+
+model Profile {
+  id                      String        @id @default(cuid())
+  userId                  String        @unique
+  user                    User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  age                     Int
+  heightCm                Int
+  weightKg                Float
+  sex                     Sex
+  activityLevel           ActivityLevel
+  goal                    Goal
+  calorieTarget           Int
+  calorieTargetOverridden Boolean       @default(false)
+  createdAt               DateTime      @default(now())
+  updatedAt               DateTime      @updatedAt
+
+  @@map("profiles")
+}
+
+model FoodEntry {
+  id         String   @id @default(cuid())
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId     String
+  name       String
+  calories   Int
+  mealType   MealType
+  occurredAt DateTime
+  createdAt  DateTime @default(now())
+
+  @@map("food_entries")
 }
