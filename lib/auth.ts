@@ -64,14 +64,14 @@ export const authOptions: AuthOptions = {
     },
     async session({ session, token }) {
       if (token && session.user) {
-        const id = typeof token.id === "string" ? token.id : session.user.id
-        const email = typeof token.email === "string" ? token.email : session.user.email
+        const id = typeof token.id === "string" ? token.id : ""
+        const email = typeof token.email === "string" ? token.email : ""
 
         session.user = {
           ...session.user,
-          id: id ?? "",
-          email: email ?? "",
-        }
+          id,
+          email,
+        } as Session["user"]
       }
 
       return session
