@@ -12,6 +12,16 @@ Calorie Smart is a full-stack calorie tracking application built with Next.js 14
 
 **Staging Environment:** https://calorie-smart-staging.vercel.app
 
+### Staging Verification (latest)
+
+_Last updated: 2024-11-22_
+
+- ✅ Authentication (sign up, sign in/out, protected route redirects)
+- ✅ Onboarding flow and calorie target calculation
+- ✅ Dashboard food entry CRUD with accurate daily totals
+- ✅ 7-day history sparkline and variance summary
+- ✅ USDA FoodData Central search + quick add (requires `FDC_API_KEY`)
+
 ## Getting Started
 
 ### Prerequisites
@@ -33,7 +43,8 @@ Required values:
 
 - `DATABASE_URL` – PostgreSQL connection string
 - `NEXTAUTH_URL` – Base URL for NextAuth callbacks (set to your deployed domain in staging/production)
-- `NEXTAUTH_SECRET` – Secret string used to sign NextAuth JWTs
+- `NEXTAUTH_SECRET` – Secret string used to sign NextAuth JWTs (generate with `openssl rand -base64 32`)
+- `NODE_ENV` – Set to `production` for staging/production deploys (Vercel applies this automatically)
 
 Optional:
 
@@ -92,7 +103,19 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Deployment
 
-For a step-by-step checklist, see [DEPLOYMENT.md](./DEPLOYMENT.md).
+For deep-dive instructions, see [DEPLOYMENT.md](./DEPLOYMENT.md), the printable [DEPLOYMENT_CHECKLIST.md](./DEPLOYMENT_CHECKLIST.md), or the end-to-end [VERCEL_SETUP_GUIDE.md](./VERCEL_SETUP_GUIDE.md).
+
+### Quick Start Scripts
+
+Generate deployment environment variables:
+```bash
+./scripts/generate-env-template.sh
+```
+
+Verify deployed staging environment:
+```bash
+./scripts/verify-deployment.sh https://calorie-smart-staging.vercel.app
+```
 
 ### Vercel + Supabase
 
