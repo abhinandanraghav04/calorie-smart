@@ -1,6 +1,6 @@
 # Deployment Guide: Staging Environment (Vercel + Supabase)
 
-This guide walks you through deploying the Calorie Smart MVP to a staging environment on Vercel with Supabase Postgres.
+This guide walks you through deploying the Calorie Smart MVP to a staging environment on Vercel with Supabase Postgres. For a step-by-step checklist you can print or copy into an issue, see [DEPLOYMENT_CHECKLIST.md](./DEPLOYMENT_CHECKLIST.md).
 
 ## Prerequisites
 

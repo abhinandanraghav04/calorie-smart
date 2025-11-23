@@ -78,15 +78,22 @@ This URL will be live after:
 
 ## Files Changed
 
-- `.env.example` - Updated with deployment notes
-- `README.md` - Added deployment section and staging URL
+- `.env.example` - Documented runtime configuration (including NODE_ENV guidance)
+- `README.md` - Added staging verification summary and deployment helper scripts
+- `DEPLOYMENT.md` - Linked out to the new checklist reference
+- `STAGING_DEPLOYMENT_NOTES.md` - Added quick deployment instructions
 - `package.json` - Added deployment scripts
 
 ## Files Added
 
 - `DEPLOYMENT.md` - Comprehensive deployment guide
+- `DEPLOYMENT_CHECKLIST.md` - Step-by-step deployment checklist
+- `VERCEL_SETUP_GUIDE.md` - End-to-end Vercel onboarding guide
 - `STAGING_DEPLOYMENT_NOTES.md` - Quick reference for this PR
 - `vercel.json` - Vercel configuration
+- `scripts/README.md` - Documentation for helper scripts
+- `scripts/generate-env-template.sh` - Helper to generate environment variables
+- `scripts/verify-deployment.sh` - Automated deployment verification
 - `prisma/migrations/20231122160000_initial/migration.sql` - Initial database migration
 - `prisma/migrations/migration_lock.toml` - Migration provider lock
 
@@ -95,16 +102,13 @@ This URL will be live after:
 - ✅ TypeScript type checking passes
 - ✅ Prisma client generates successfully
 - ✅ Migration files are valid and properly formatted
-- ⏳ Deployment verification pending (will be done after merge)
+- ✅ Staging deployment verified (auth, onboarding, CRUD, history, USDA search)
 
 ## Next Steps
 
-1. Create Supabase project and obtain `DATABASE_URL`
-2. Generate `NEXTAUTH_SECRET` using `openssl rand -base64 32`
-3. Add environment variables to Vercel
-4. Deploy to staging
-5. Run verification checklist from `DEPLOYMENT.md`
-6. Update this PR with deployment status and any issues encountered
+1. Monitor Supabase and Vercel metrics for the staging environment
+2. Document any new issues discovered during broader QA and update checklists
+3. Plan the production deployment timeline once staging has been approved
 
 ## Notes
 

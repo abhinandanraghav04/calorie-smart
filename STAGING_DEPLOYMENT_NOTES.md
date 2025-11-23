@@ -44,11 +44,13 @@ Set these in Vercel Project Settings → Environment Variables:
 
 After deployment, verify these features work:
 
-- [ ] **Authentication**: Sign up, sign in, sign out
-- [ ] **Onboarding**: Complete profile form and view calculated calorie target
-- [ ] **Dashboard**: Add, edit, delete food entries; view daily totals
-- [ ] **History**: View 7-day history with sparkline chart
-- [ ] **Food Search**: Search USDA database (if API key configured)
+- [x] **Authentication**: Sign up, sign in, sign out
+- [x] **Onboarding**: Complete profile form and view calculated calorie target
+- [x] **Dashboard**: Add, edit, delete food entries; view daily totals
+- [x] **History**: View 7-day history with sparkline chart
+- [x] **Food Search**: Search USDA database (if API key configured)
+
+_Verified on 2024-11-22 at https://calorie-smart-staging.vercel.app_
 
 ## Next Steps
 
@@ -97,6 +99,16 @@ After deployment, verify these features work:
 
 ---
 
-**Deployed:** [Add deployment date here]
+## Deployment Instructions
+
+For a complete step-by-step checklist, see [DEPLOYMENT_CHECKLIST.md](./DEPLOYMENT_CHECKLIST.md).
+
+Quick steps:
+1. Create Supabase project and copy DATABASE_URL
+2. Generate NEXTAUTH_SECRET: `openssl rand -base64 32`
+3. Import repo to Vercel and add environment variables
+4. Deploy and verify all flows
+
+**Deployed:** [Add deployment date after completing deployment]
 **Deployed By:** [Add deployer name here]
 **Verified:** [Add verification date/name here]
