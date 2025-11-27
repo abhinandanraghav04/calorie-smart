@@ -12,6 +12,19 @@ Calorie Smart is a full-stack calorie tracking application built with Next.js 14
 
 **Staging Environment:** https://calorie-smart-staging.vercel.app
 
+### Quick Smoke Test (Staging)
+
+Use the flow below to sanity-check the staging deployment:
+
+1. Open the staging URL above (ensure the page loads without a Vercel `DEPLOYMENT_NOT_FOUND` error).
+2. Sign up for a new account or sign in with the seeded demo user (`demo@example.com` / `password123`).
+3. Complete the onboarding questionnaire to generate the personalized calorie target.
+4. On the dashboard, add a food entry, edit it, and then delete it—confirm that the progress ring updates after each action.
+5. Navigate to the 7-day history page from the sidebar and verify the chart renders with the new entry reflected.
+6. Click **Add Food** and search the USDA database (requires an `FDC_API_KEY`; if the key is missing the modal will display a helpful empty state).
+
+If any step fails, record the behavior and open a follow-up ticket with screenshots or console errors if possible. A comprehensive checklist is available in [SMOKE_TEST.md](./SMOKE_TEST.md).
+
 ## Getting Started
 
 ### Prerequisites
