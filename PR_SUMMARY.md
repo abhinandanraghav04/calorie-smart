@@ -76,6 +76,27 @@ This URL will be live after:
 2. Environment variables are configured in Vercel
 3. This PR is deployed
 
+### Demo Credentials
+
+For smoke testing, use the seeded demo user:
+- **Email:** `demo@example.com`
+- **Password:** `password123`
+
+Or create a new account to test the full sign-up flow.
+
+### Smoke Test Instructions
+
+See [SMOKE_TEST.md](./SMOKE_TEST.md) for comprehensive testing instructions.
+
+**Quick Smoke Test:**
+1. Visit the staging URL and verify it loads (not 404)
+2. Sign in with demo credentials or create a new account
+3. Complete onboarding to generate a personalized calorie target
+4. On the dashboard: add, edit, and delete a food entry
+5. Verify the progress ring updates after each action
+6. Navigate to the 7-day history page and verify the chart renders
+7. Test USDA search (if `FDC_API_KEY` is configured)
+
 ## Files Changed
 
 - `.env.example` - Updated with deployment notes
@@ -86,6 +107,9 @@ This URL will be live after:
 
 - `DEPLOYMENT.md` - Comprehensive deployment guide
 - `STAGING_DEPLOYMENT_NOTES.md` - Quick reference for this PR
+- `SMOKE_TEST.md` - Detailed staging smoke test checklist
+- `SMOKE_TEST_SUMMARY.md` - Quick-reference status template for PR updates
+- `scripts/verify-env.sh` - Helper script to validate required environment variables
 - `vercel.json` - Vercel configuration
 - `prisma/migrations/20231122160000_initial/migration.sql` - Initial database migration
 - `prisma/migrations/migration_lock.toml` - Migration provider lock
@@ -96,6 +120,21 @@ This URL will be live after:
 - ✅ Prisma client generates successfully
 - ✅ Migration files are valid and properly formatted
 - ⏳ Deployment verification pending (will be done after merge)
+
+### Smoke Test Status
+
+**Current Status (2025-11-27):** ⚠️ Blocked - Deployment not accessible
+
+The staging URL currently returns `DEPLOYMENT_NOT_FOUND`. Before smoke testing can begin:
+
+1. ✅ Smoke test documentation created ([SMOKE_TEST.md](./SMOKE_TEST.md))
+2. ✅ Quick reference guide created ([SMOKE_TEST_SUMMARY.md](./SMOKE_TEST_SUMMARY.md))
+3. ✅ Environment verification script added (`scripts/verify-env.sh`)
+4. ⏳ Pending: Vercel deployment must be created and environment variables configured
+5. ⏳ Pending: Database must be seeded with demo user
+6. ⏳ Pending: Execute smoke test and post results
+
+**Next tester:** Please follow the instructions in [SMOKE_TEST_SUMMARY.md](./SMOKE_TEST_SUMMARY.md) and post results using the provided template.
 
 ## Next Steps
 

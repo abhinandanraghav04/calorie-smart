@@ -2,7 +2,8 @@
 
 ## Deployment Status
 
-**Staging URL:** https://calorie-smart-staging.vercel.app
+**Staging URL:** https://calorie-smart-staging.vercel.app  
+_Status (2025-11-27): Visiting the URL currently returns Vercel `DEPLOYMENT_NOT_FOUND`. Confirm the project is deployed before running the smoke test._
 
 ## What's Been Configured
 
@@ -42,13 +43,21 @@ Set these in Vercel Project Settings → Environment Variables:
 
 ### Deployment Verification Checklist
 
-After deployment, verify these features work:
+After deployment, verify these features work (see [SMOKE_TEST.md](./SMOKE_TEST.md) for detailed instructions):
 
 - [ ] **Authentication**: Sign up, sign in, sign out
 - [ ] **Onboarding**: Complete profile form and view calculated calorie target
 - [ ] **Dashboard**: Add, edit, delete food entries; view daily totals
 - [ ] **History**: View 7-day history with sparkline chart
 - [ ] **Food Search**: Search USDA database (if API key configured)
+
+**Quick Smoke Test Steps:**
+1. Visit the staging URL and ensure it loads (not 404)
+2. Sign up with a new account or use demo credentials (`demo@example.com` / `password123`)
+3. Complete onboarding to generate a calorie target
+4. Add, edit, and delete a food entry on the dashboard—confirm the progress ring updates
+5. Navigate to the 7-day history page and verify the chart renders
+6. Test USDA search (if `FDC_API_KEY` is configured)
 
 ## Next Steps
 
@@ -94,6 +103,10 @@ After deployment, verify these features work:
 - Use Supabase connection pooling (pgbouncer) for serverless
 - Verify Supabase project has not paused (free tier auto-pauses)
 - Check that DATABASE_URL includes `?pgbouncer=true` parameter
+
+## Smoke Test Log
+
+- **2025-11-27:** ❌ Blocked – staging deployment not yet available (Vercel `DEPLOYMENT_NOT_FOUND`). Pending Vercel deployment and environment variable verification.
 
 ---
 
