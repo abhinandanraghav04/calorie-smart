@@ -1,12 +1,22 @@
-# Calorie Smart MVP
+# Calorie Smart
 
-Calorie Smart is a full-stack calorie tracking application built with Next.js 14 (App Router), TypeScript, Prisma, and NextAuth. The MVP integrates all feature branches into a single experience:
+A full-stack calorie tracker I built to learn how a real web product fits together end to end: authentication, a relational database, server-side API routes, third-party data and deployment.
 
-- Email/password authentication with protected routes
-- Guided onboarding to capture profile details and calculate calorie targets
-- Food logging with CRUD actions and daily dashboard summary
-- 7-day history view with visual sparkline and variance vs target
-- Optional USDA FoodData Central search integration for faster logging
+**Stack:** Next.js 14 (App Router), TypeScript, PostgreSQL, Prisma, NextAuth, Zod, deployed on Vercel with Supabase.
+
+## What it does
+
+- Email and password sign-up with protected routes (NextAuth, bcrypt-hashed passwords)
+- Onboarding that works out a daily calorie target from your profile using the Mifflin-St Jeor formula
+- Food logging with create, edit and delete, plus a daily dashboard showing progress against target
+- 7-day history with a sparkline and variance from target
+- Optional food search backed by the USDA FoodData Central API
+
+## What I focused on
+
+- A clean Prisma schema and migrations so the database can be rebuilt from migrations and seeded with demo data
+- Validating input with Zod on the server rather than trusting the client
+- Keeping secrets out of the repo: everything is configured through environment variables (see `.env.example`)
 
 ## Live Demo
 
